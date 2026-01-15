@@ -1,10 +1,10 @@
 # Once
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laragear/once-.svg)](https://packagist.org/packages/laragear/once-)
-[![Latest stable test run](https://github.com/Laragear/Once/actions/workflows/php.yml/badge.svg?branch=1.x)](https://github.com/Laragear/Once/actions/workflows/php.yml)
-[![Codecov coverage](https://codecov.io/gh/Laragear/Once/branch/1.x/graph/badge.svg?token=HIngrvQeOj)](https://codecov.io/gh/Laragear/Once)
-[![CodeClimate Maintainability](https://api.codeclimate.com/v1/badges/{token}/maintainability)](https://codeclimate.com/github/Laragear/Once/maintainability)
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=Laragear_Once&metric=alert_status)](https://sonarcloud.io/dashboard?id=Laragear_Once)
-[![Laravel Octane Compatibility](https://img.shields.io/badge/Laravel%20Octane-Compatible-success?style=flat&logo=laravel)](https://laravel.com/docs/11.x/octane#introduction)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/laragear/attempt-once.svg)](https://packagist.org/packages/laragear/attempt-once)
+[![Latest stable test run](https://github.com/Laragear/AttemptOnce/actions/workflows/php.yml/badge.svg?branch=1.x)](https://github.com/Laragear/AttemptOnce/actions/workflows/php.yml)
+[![Codecov coverage](https://codecov.io/gh/Laragear/AttemptOnce/branch/1.x/graph/badge.svg?token=I8c1hGBtqc)](https://codecov.io/gh/Laragear/AttemptOnce)
+[![Maintainability](https://qlty.sh/gh/Laragear/projects/AttemptOnce/maintainability.svg)](https://qlty.sh/gh/Laragear/projects/AttemptOnce)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=Laragear_AttemptOnce&metric=alert_status)](https://sonarcloud.io/dashboard?id=Laragear_AttemptOnce)
+[![Laravel Octane Compatibility](https://img.shields.io/badge/Laravel%20Octane-Compatible-success?style=flat&logo=laravel)](https://laravel.com/docs/12.x/octane#introduction)
 
 Run and manage callbacks across multiple app instances, atomically.
 
