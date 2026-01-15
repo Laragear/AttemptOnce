@@ -95,7 +95,7 @@ attempt_once('send-email', 'transaction', ['user' => 1])->run(function () {
 });
 ```
 
-If you pass an Eloquent Model as second parameter, it will be used to identify the callback as `{key}|{class}:{key}`, essentially making the callback unique for each model you pass.
+If you pass an Eloquent Model as second parameter, it will be used to identify the callback as `{class}:{key}`, essentially making the callback unique for each model you pass.
 
 ```php
 use App\Models\User;
@@ -108,7 +108,7 @@ attempt_once('send-email', $user)->run(function () {
 });
 ```
 
-You may also use Backed Enums. The key will be appended using the name of the class and its value (a number or a string).
+When using an Enum as key, the class name and case name will be used as part of the key as `{class}:{case}`. 
 
 ```php
 use App\Models\User;
@@ -116,7 +116,7 @@ use App\Enums\EmailType;
 
 $user = User::find(1);
 
-// "send-email|\App\Enums\EmailType:3|\App\Models\User:1"
+// "send-email|\App\Enums\EmailType:Transactional|\App\Models\User:1"
 attempt_once('send-email', EmailType::Transactional)->run(function () {
     // ...
 });
@@ -173,14 +173,14 @@ Route::get('/articles/all', function () {
 
 ### Default result
 
-Sometimes you will want to return another value rather than `false` if the callback is not executed. For that, use the `default()` method.
+Sometimes you will want to return another value rather than `false` if the callback is not executed. For that, use the `or()` method.
 
 ```php
 use App\Models\Article;
 use function Illuminate\Support\minutes;
 
 $collection = attempt_once('latest-articles')
-    ->default(new Collection())
+    ->or(new Collection())
     ->run(function () {
         return Article::limit(10)->latest()->get();
     });
@@ -188,11 +188,7 @@ $collection = attempt_once('latest-articles')
 
 ### Checking execution
 
-> [!IMPORTANT]
-> 
-> To check the execution of the callback, a [key](#custom-key) is required.
-
-To check if the callback was executed, you may use the `wasExecuted()` and `wasNotExecuted()` methods.
+To check if the callback was executed, you may use the `wasExecuted()` and `wasNotExecuted()` methods, which is only accessible using a named key.
 
 ```php
 if (attempt_once('send-email')->wasExecuted()) {

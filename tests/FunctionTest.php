@@ -105,7 +105,7 @@ class FunctionTest extends TestCase
 
             $mock->expects('increment')->withArgs(function (string $key, int $ttl): true {
                 static::assertStringStartsWith(
-                    'test|foo:bar|' . Fixtures\TestType::class . ':testType1|'. User::class . ':99', $key
+                    'test|foo:bar|' . Fixtures\TestType::class . ':TestType1|'. User::class . ':99', $key
                 );
                 static::assertSame(30, $ttl);
 
@@ -154,14 +154,14 @@ class FunctionTest extends TestCase
         static::assertTrue(attempt_once('test')->for($customTtl)->run(fn () => true));
     }
 
-    public function test_builder_uses_default_value(): void
+    public function test_builder_uses_or_value(): void
     {
         $this->mock(RateLimiter::class, function (MockInterface $mock) {
             $mock->expects('tooManyAttempts')->andReturnTrue();
             $mock->expects('increment')->never();
         });
 
-        static::assertSame('executed', attempt_once('test')->default(fn () => 'executed')->run(fn () => true));
+        static::assertSame('executed', attempt_once('test')->or(fn () => 'executed')->run(fn () => true));
     }
 
     public function test_builder_was_executed(): void

@@ -10,8 +10,7 @@ use Illuminate\Cache\RateLimiter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
-use function array_first;
+use UnitEnum;
 use function array_key_first;
 use function array_map;
 use function get_class;
@@ -63,7 +62,7 @@ class Builder
      * @param  TDefault|(callable():TDefault)  $value
      * @return $this
      */
-    public function default(mixed $value): static
+    public function or(mixed $value): static
     {
         $this->default = $value;
 
@@ -84,8 +83,8 @@ class Builder
                 return get_class($key).':'.$key->getKey();
             }
 
-            if ($key instanceof BackedEnum) {
-                return get_class($key).':'.$key->value;
+            if ($key instanceof UnitEnum) {
+                return get_class($key).':'.$key->name;
             }
 
             return $key;
