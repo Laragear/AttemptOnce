@@ -62,6 +62,9 @@ jobs:
         dependencies:
           - lowest
           - highest
+        exclude:
+          - php-version: 8.5
+            laravel-constraint: 11.*
 
     steps:
       - name: Set up PHP
