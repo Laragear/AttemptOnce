@@ -90,7 +90,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: Laragear/Once
+          slug: Laragear/AttemptOnce
 
   static_analysis:
     name: 3️⃣ Static Analysis
