@@ -23,7 +23,7 @@
     },
     "require-dev": {
         "laragear/meta-testing": "3.*",
-        "orchestra/testbench": "10.*|9.*"
+        "orchestra/testbench": "^9.16|10.*"
     },
     "autoload": {
         "psr-4": {
