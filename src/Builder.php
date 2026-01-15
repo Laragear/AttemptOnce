@@ -8,6 +8,7 @@ use DateInterval;
 use DateTimeInterface;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use function array_first;
@@ -76,7 +77,7 @@ class Builder
     {
         return implode('|', array_map(static function (BackedEnum|Model|string|array $key): string {
             if (is_array($key)) {
-                return array_key_first($key).':'.array_first($key);
+                return array_key_first($key).':'.Arr::first($key);
             }
 
             if ($key instanceof Model) {
