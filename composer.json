@@ -22,7 +22,7 @@
         "laragear/meta-model": "^2.0.0"
     },
     "require-dev": {
-        "laragear/meta-testing": "3.*",
+        "laragear/meta-testing": "3.* || 4.*",
         "orchestra/testbench": "^9.16|10.*"
     },
     "autoload": {
