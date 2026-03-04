@@ -18,7 +18,7 @@
     },
     "require": {
         "php": "^8.4",
-        "laragear/meta": "^4.0.0",
+        "laragear/meta": "^4.0.0 || ^5.0.0",
         "laragear/meta-model": "^2.0.0"
     },
     "require-dev": {
