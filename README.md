@@ -1,3 +1,7 @@
+# Deprecated
+
+Use [`Cache::funnel()`](https://github.com/laravel/framework/pull/58439) with 1 attempt instead.
+
 # Once
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laragear/attempt-once.svg)](https://packagist.org/packages/laragear/attempt-once)
 [![Latest stable test run](https://github.com/Laragear/AttemptOnce/actions/workflows/php.yml/badge.svg?branch=1.x)](https://github.com/Laragear/AttemptOnce/actions/workflows/php.yml)
